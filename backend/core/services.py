@@ -1,2 +1,4 @@
 def count_number_of_words(text):
-    return 1
+    list_of_words = text.split()
+    number_of_words = len(list_of_words)
+    return number_of_words
