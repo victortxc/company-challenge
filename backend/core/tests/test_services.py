@@ -1,8 +1,9 @@
-from django.test import SimpleTesteCase
+from django.test import SimpleTestCase
 
 from core import services
 
-class ServicesTests(SimpleTesteCase):
+
+class ServicesTests(SimpleTestCase):
     def test_count_number_of_words(self):
         """Test that count number of words service works"""
         text = "Hello world"
