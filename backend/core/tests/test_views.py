@@ -2,7 +2,6 @@ from django.test import SimpleTestCase
 from rest_framework.test import APIClient
 from django.urls import reverse
 from rest_framework import status
-from core import views
 
 COUNT_NUMBER_URL = reverse("count-number-of-words")
 
