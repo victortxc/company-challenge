@@ -71,7 +71,7 @@ export default {
         color: white;
         border: none;
         border-radius: 20px;
-        margin-top: 10px;
+        margin-top: 20px;
         transition: 0.5s;
     }
     #input-btn:hover {

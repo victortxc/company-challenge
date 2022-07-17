@@ -14,6 +14,7 @@ export default {
 
 <style scoped>
     #nav {
+        width: 100%;
         background-color:#DAD6E3 ;
         padding: 15px 50px;
         display: flex;
