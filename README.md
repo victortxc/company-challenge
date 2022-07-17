@@ -49,6 +49,7 @@ Follow the steps below
 
 # Start the project
 $ docker-compose up --build
+# Access: http://localhost:3000
 ```
 
 Testing
