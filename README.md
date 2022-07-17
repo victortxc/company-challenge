@@ -45,6 +45,9 @@ $ git clone https://github.com/victortxc/voxy-challenge.git && cd voxy-challenge
 Follow the steps below
 
 ```bash
+# Make sure to create a .env file inside backend folder with your django secret key
+$ SECRET_KEY=YOUR_SECRET_KEY
+
 # Make sure you have docker running in your machine
 
 # Start the project
