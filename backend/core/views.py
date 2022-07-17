@@ -16,4 +16,7 @@ class CountNumberOfWords(APIView):
             number_of_words = services.count_number_of_words(
                 serializer.validated_data["text"])
 
-            return Response({"text": number_of_words}, status=status.HTTP_200_OK)
+            return Response(
+                {"text": number_of_words},
+                status=status.HTTP_200_OK
+            )
