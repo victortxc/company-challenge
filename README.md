@@ -1,5 +1,5 @@
 <div align="center">
-    <img align="center" alt="Voxy Challenge" title="Voxy Challenge" src="frontend/public/img/Voxy_logo.png" />
+    <img align="center" alt="Voxy Challenge" title="Voxy Challenge" src="frontend/public/img/Voxy_logo.png" width="100" />
 </div>
 
 <p align="center">
@@ -49,6 +49,22 @@ Follow the steps below
 
 # Start the project
 $ docker-compose up --build
+```
+
+Testing
+
+```bash
+
+# Test the Django project
+$ docker-compose run --rm backend sh -c "python manage.py test"
+```
+
+Linting
+
+```bash
+
+# Check for lintings errors in the Django project
+$ docker-compose run --rm backend sh -c "flake8"
 ```
 
 ## 💻 Project
