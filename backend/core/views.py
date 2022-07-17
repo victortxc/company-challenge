@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import serializers
+from rest_framework import serializers, status
 from core import services
 
 
@@ -16,4 +16,4 @@ class CountNumberOfWords(APIView):
             number_of_words = services.count_number_of_words(
                 serializer.validated_data["text"])
 
-            return Response(number_of_words)
+            return Response({"text": number_of_words}, status=status.HTTP_200_OK)

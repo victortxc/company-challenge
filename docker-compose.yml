@@ -6,8 +6,6 @@ services:
       context: ./backend
       args:
         - DEV=true
-    ports:
-      - "8000:8000"
     volumes:
       - ./backend:/app
     command: >
@@ -15,8 +13,12 @@ services:
   frontend:
     build: 
       context: ./frontend
-    ports:
-      - "3000:3000"
     volumes:
       - /app/node_modules
       - ./frontend:/app
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+    - 3000:3000
+    - 3101:3101

@@ -1,6 +1,6 @@
 <template>
     <div id="nav">
-        <img src="../../public/img/Voxy_logo.png" alt="Voxy logo" width="100"/>
+        <img src="/img/Voxy_logo.png" alt="Voxy logo" width="100"/>
         <h2 id="text">Code Challenge</h2>
     </div>
 </template>
