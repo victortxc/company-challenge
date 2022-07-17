@@ -2,7 +2,8 @@
     <div id="container">
         <h1 id="title">Word counter</h1>
         <form id="word-form" @submit="getNumberOfWords">
-            <textarea type="textarea" id="textarea" name="text" v-model="text" placeholder="Type some text" />
+            <textarea :class="{'textarea-danger':error}" type="textarea" id="textarea" name="text" v-model="text" placeholder="Type some text" />
+            <span id="error" v-show="error !== null">{{error}}</span>
             <input id="input-btn" type="submit" value="Submit" />
         </form>
 
@@ -17,23 +18,31 @@ export default {
     data() {
         return {
             text: null,
+            error: null,
             numberOfWords: 0
         }
     },
     methods: {
         async getNumberOfWords(e) {
             e.preventDefault();
-            const data = {
+            if(this.text !== null && this.text !== ''){
+                const data = {
                 text: this.text
-            }
-            const dataJson = JSON.stringify(data);
-            const request = await fetch("/api/v1/core/", {
-                method: "POST", 
-                headers: {"Content-Type": "application/json"}, 
-                body: dataJson
+                }
+                const dataJson = JSON.stringify(data);
+                const request = await fetch("/api/v1/core/", {
+                    method: "POST", 
+                    headers: {"Content-Type": "application/json"}, 
+                    body: dataJson
                 });
-            const response = await request.json();
-            this.numberOfWords = response.text;
+                const response = await request.json();
+                this.error = null;
+                this.numberOfWords = response.text;
+            } else {
+                this.numberOfWords = 0
+                this.error = "You need to type some text before submit."
+            }
+            
         }
     }
 }
@@ -64,6 +73,10 @@ export default {
         padding: 10px;
     }
 
+    .textarea-danger {
+        border: 1px solid #ff3333;
+    }
+
     #input-btn {
         width: 200px;
         height: 30px;
@@ -83,5 +96,10 @@ export default {
     #result {
         margin-top: 10px;
         color: #302D68;
+    }
+    #error {
+        margin-top: 10px;
+        color: #ff3333;
+        font-size: 14px;
     }
 </style>
