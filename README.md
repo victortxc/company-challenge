@@ -1,5 +1,5 @@
 <div align="center">
-    <img align="center" alt="Voxy Challenge" title="Voxy Challenge" src="frontend/public/img/Voxy_logo.png" width="100" />
+    <img align="center" alt="Voxy Challenge" title="Voxy Challenge" src="frontend/public/img/Voxy_logo.png" width="200" />
 </div>
 
 <p align="center">
